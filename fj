@@ -1,0 +1,23 @@
+# ----------------------------------------
+# Auto-suggestions and Command Completion
+# ----------------------------------------
+
+# Enable zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # Color for autosuggestions (gray)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)  # Use both history and completion for suggestions
+ZSH_AUTOSUGGEST_ACCEPT_ON_RIGHT_ARROW=1  # Accept suggestion when pressing right arrow
+
+# Enable zsh-completions (adds intelligent command completion)
+autoload -U compinit && compinit        # Initialize completion system
+autoload -U bashcompinit && bashcompinit # Allow bash-style completions
+fpath+=~/.zsh/zsh-completions/src      # Add zsh-completions path
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh  # Source completions plugin
+
+# ----------------------------------------
+# Optional: Enable Syntax Highlighting
+# ----------------------------------------
+
+# If you want syntax highlighting (useful for identifying errors in commands)
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)  # Set syntax highlighting to use main method (valid/invalid commands)
